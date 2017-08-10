@@ -19,7 +19,7 @@ public class CancelAction extends Application implements EventHandler<ActionEven
 
     public static void main(String[] args) {
 
-        launch();
+        launch(args);
     }
 
     @Override
