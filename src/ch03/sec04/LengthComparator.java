@@ -7,7 +7,10 @@ public class LengthComparator {
     public static void main(String[] args) {
 
         Comparator<String> comparator =
-                Comparator.comparingInt(String::length);
+                (String first, String second) -> first.length() - second.length();
+
+//        Comparator<String> comparator =
+//                Comparator.comparingInt(String::length);
 
         System.out.println(comparator.compare("Hello", "World"));
     }
