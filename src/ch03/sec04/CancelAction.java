@@ -1,4 +1,4 @@
-package ch03.sec03;
+package ch03.sec04;
 
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -27,7 +27,12 @@ public class CancelAction extends Application implements EventHandler<ActionEven
 
         Button cancelButton = new Button("Cancel");
 
-        EventHandler<ActionEvent> eventHandler = new CancelAction();
+//        1st method
+//        EventHandler<ActionEvent> eventHandler = new CancelAction();
+
+//        2nd method
+        EventHandler<ActionEvent> eventHandler =
+                event -> System.out.println("Oh noes!");
 
         cancelButton.setOnAction(eventHandler);
 

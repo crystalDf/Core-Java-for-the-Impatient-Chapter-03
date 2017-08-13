@@ -2,29 +2,44 @@ package ch03.sec04;
 
 import java.util.Comparator;
 
-public class LengthComparator {
+public class LengthComparator implements Comparator<String> {
+
+    @Override
+    public int compare(String o1, String o2) {
+        return o1.length() - o2.length();
+    }
 
     public static void main(String[] args) {
 
 //        1st method
+//        Comparator<String> comparator = new LengthComparator();
+
+//        2nd method
 //        Comparator<String> comparator =
 //                (String first, String second) -> first.length() - second.length();
 
-        Comparator<String> comparator =
-                (String first, String second) -> {
-                    int difference = first.length() - second.length();
-
-                    if (difference < 0) {
-                        return -1;
-                    } else if (difference > 0) {
-                        return 1;
-                    } else {
-                        return 0;
-                    }
-                };
-
+//        3rd method
 //        Comparator<String> comparator =
-//                Comparator.comparingInt(String::length);
+//                (String first, String second) -> {
+//
+//                    int difference = first.length() - second.length();
+//
+//                    if (difference < 0) {
+//                        return -1;
+//                    } else if (difference > 0) {
+//                        return 1;
+//                    } else {
+//                        return 0;
+//                    }
+//                };
+
+//        4th method
+//        Comparator<String> comparator =
+//                (first, second) -> first.length() - second.length();
+
+//        5th method
+        Comparator<String> comparator =
+                Comparator.comparingInt(String::length);
 
         System.out.println(comparator.compare("Hello", "World"));
     }
