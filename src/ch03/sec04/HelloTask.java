@@ -13,11 +13,13 @@ public class HelloTask implements Runnable {
 
     public static void main(String[] args) {
 
+        Runnable runnable;
+
 //        1st method
-//        Runnable runnable = new HelloTask();
+        runnable = new HelloTask();
 
 //        2nd method
-        Runnable runnable = () -> {
+        runnable = () -> {
 
             for (int i = 0; i < 10; i++) {
 

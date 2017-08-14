@@ -22,6 +22,9 @@ public class MethodReferences {
         });
 
 //        2nd method
+//      You can supply a lambda expression whenever
+//      an object of an interface with a single abstract method is expected.
+//      Such an interface is called a functional interface.
         Arrays.sort(strings, (x, y) -> x.compareToIgnoreCase(y));
 
 //        3rd method

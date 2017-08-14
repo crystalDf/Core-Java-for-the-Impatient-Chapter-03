@@ -27,11 +27,13 @@ public class CancelAction extends Application implements EventHandler<ActionEven
 
         Button cancelButton = new Button("Cancel");
 
+        EventHandler<ActionEvent> eventHandler;
+
 //        1st method
-//        EventHandler<ActionEvent> eventHandler = new CancelAction();
+        eventHandler = new CancelAction();
 
 //        2nd method
-        EventHandler<ActionEvent> eventHandler =
+        eventHandler =
                 event -> System.out.println("Oh noes!");
 
         cancelButton.setOnAction(eventHandler);
