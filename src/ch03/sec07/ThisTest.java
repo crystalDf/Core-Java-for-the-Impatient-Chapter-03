@@ -9,15 +9,17 @@ public class ThisTest {
 
     public void doWork() {
 
-//        Runnable runnable = new Runnable() {
-//            @Override
-//            public void run() {
-//                System.out.println(this.toString());
-//            }
-//        };
+        Runnable runnableWithoutLambda = new Runnable() {
+            @Override
+            public void run() {
+                System.out.println("Runnable without Lambda: " + this.getClass().getName());
+            }
+        };
 
-        Runnable runnable = () -> System.out.println(this.toString());
+        Runnable runnableWithLambda =
+                () -> System.out.println("Runnable with Lambda: " + this.getClass().getName());
 
-        new Thread(runnable).start();
+        new Thread(runnableWithoutLambda).start();
+        new Thread(runnableWithLambda).start();
     }
 }
