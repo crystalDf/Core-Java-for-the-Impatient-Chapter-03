@@ -9,14 +9,14 @@ public class ThisTest {
 
     public void doWork() {
 
-        Runnable runnable = new Runnable() {
-            @Override
-            public void run() {
-                System.out.println(this.toString());
-            }
-        };
+//        Runnable runnable = new Runnable() {
+//            @Override
+//            public void run() {
+//                System.out.println(this.toString());
+//            }
+//        };
 
-//        Runnable runnable = () -> System.out.println(this.toString());
+        Runnable runnable = () -> System.out.println(this.toString());
 
         new Thread(runnable).start();
     }
