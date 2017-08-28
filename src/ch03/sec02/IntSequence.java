@@ -8,7 +8,7 @@ public interface IntSequence {
 
     int next();
 
-    public static IntSequence digitsOf(int n) {
+    static IntSequence digitsOf(int n) {
         return new DigitSequence(n);
     }
 }

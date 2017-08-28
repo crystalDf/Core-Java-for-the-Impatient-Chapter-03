@@ -4,6 +4,10 @@ public class Ex05 {
 
     public static void main(String[] args) {
 
-        IntSequence.constant(5);
+        IntSequence intSequence = IntSequence.constant(1);
+
+        while (intSequence.hasNext()) {
+            System.out.println(intSequence.next());
+        }
     }
 }

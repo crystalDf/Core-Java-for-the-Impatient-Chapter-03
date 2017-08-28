@@ -2,11 +2,26 @@ package ch03.ex04;
 
 public interface IntSequence {
 
-    static void staticOf(int... numbers) {
-        for (int number : numbers) {
-            System.out.println(number);
-        }
+    default boolean hasNext() {
+        return true;
     }
 
-    void of(int... numbers);
+    int next();
+
+    static IntSequence of(int... numbers) {
+        return new IntSequence() {
+
+            private int i = 0;
+
+            @Override
+            public int next() {
+                return numbers[i++];
+            }
+
+            @Override
+            public boolean hasNext() {
+                return i < numbers.length;
+            }
+        };
+    }
 }

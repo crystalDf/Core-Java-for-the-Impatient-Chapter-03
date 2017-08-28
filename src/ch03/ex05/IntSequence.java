@@ -2,9 +2,13 @@ package ch03.ex05;
 
 public interface IntSequence {
 
-    static void constant(int n) {
-        while (true) {
-            System.out.println(n);
-        }
+    default boolean hasNext() {
+        return true;
+    }
+
+    int next();
+
+    static IntSequence constant(int number) {
+        return () -> number;
     }
 }
