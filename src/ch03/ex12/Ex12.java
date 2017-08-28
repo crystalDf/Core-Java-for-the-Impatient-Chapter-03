@@ -27,7 +27,7 @@ public class Ex12 {
                 } else if (o1.isFile() && o2.isDirectory()) {
                     return -1;
                 } else {
-                    return o1.getName().compareTo(o2.getName());
+                    return o1.getAbsoluteFile().compareTo(o2.getAbsoluteFile());
                 }
             }
         });
@@ -39,7 +39,7 @@ public class Ex12 {
             } else if (o1.isFile() && o2.isDirectory()) {
                 return -1;
             } else {
-                return o1.getName().compareTo(o2.getName());
+                return o1.getAbsoluteFile().compareTo(o2.getAbsoluteFile());
             }
         });
 
